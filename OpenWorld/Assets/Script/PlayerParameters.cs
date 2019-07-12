@@ -73,6 +73,8 @@ public class PlayerParameters : ScriptableObject
     [Tooltip("Default distance for the max length of light beam")]
     public float maxDistanceOfLightBeam = 15f;
 
+    public LayerMask hitLayers;
+
     [Header("Camera Follow")] //how the camera follows player speed wise
 
     [Range(0, 5f)]
