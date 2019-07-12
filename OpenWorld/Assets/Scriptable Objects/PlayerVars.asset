@@ -30,7 +30,7 @@ MonoBehaviour:
   cautionHealth: {r: 1, g: 0.74189997, b: 0.2028302, a: 0}
   dangerHealth: {r: 1, g: 0.058691293, b: 0, a: 0}
   levelOfLightIntesity: 1.25
-  maxDistanceOfLightBeam: 15
+  maxDistanceOfLightBeam: 20
   tiltCameraSpeed: 1
   minTilt: -15
   maxTilt: 20

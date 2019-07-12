@@ -31,11 +31,13 @@ public class BeamAdjustOnCollide : MonoBehaviour
         else if (hit.distance < playerVariables.maxDistanceOfLightBeam && hit.distance > 0)
         {
             self.SetPosition(1, new Vector3(0f, 0f, hit.distance));
+            //transform.localScale = new Vector3( 0f, 0f, playerVariables.maxDistanceOfLightBeam / hit.distance);
         }
         //line stays max length if raycast does not hit another object
         else
         {
             self.SetPosition(1, new Vector3(0f, 0f, playerVariables.maxDistanceOfLightBeam));
+            //transform.localScale = new Vector3(0f, 0f, 1f);
         }
     }
 }
