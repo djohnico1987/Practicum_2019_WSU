@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f927d4f2dc79d274ebffa6b69f0d67ff, type: 3}
   m_Name: PlayerVars
   m_EditorClassIdentifier: 
+  radius: 20
   walkSpeed: 6
   sideSpeed: 3
   backSpeed: 3
@@ -25,8 +26,8 @@ MonoBehaviour:
   maxHealth: 3
   timeInvurnerable: 1
   timeToRespawn: 1.5
-  startHealth: {r: 0.9658127, g: 1, b: 0.6273585, a: 0}
-  cautionHealth: {r: 1, g: 0.6883278, b: 0.042452812, a: 0}
+  startHealth: {r: 0.9052632, g: 1, b: 0, a: 0}
+  cautionHealth: {r: 1, g: 0.74189997, b: 0.2028302, a: 0}
   dangerHealth: {r: 1, g: 0.058691293, b: 0, a: 0}
   levelOfLightIntesity: 1.25
   maxDistanceOfLightBeam: 15

@@ -6,6 +6,11 @@ using UnityEngine;
 public class PlayerParameters : ScriptableObject
 
 {
+    [Header("Radius of Material Change")]
+    [Tooltip("Adjust the value to increase/decrease the radius color/texture change that follows the player")]
+    [Range(0, 40f)]
+    public float radius = 20f;
+
     [Header("Movement")] //variables for walking movement and jump
 
     [Range(0, 20f)]

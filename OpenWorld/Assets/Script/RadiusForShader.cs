@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class RadiusForShader : MonoBehaviour
 {
-    [SerializeField]
-    float radius;
+    public PlayerParameters playerVariables;
     
     void Update()
     {
         //gets information from shader
         Shader.SetGlobalVector("_Position", transform.position);
-        Shader.SetGlobalFloat("_Radius", radius);
+        Shader.SetGlobalFloat("_Radius", playerVariables.radius);
     }
 }
