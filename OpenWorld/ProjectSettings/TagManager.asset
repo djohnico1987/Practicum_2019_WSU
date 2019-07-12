@@ -9,6 +9,8 @@ TagManager:
   - PickUp
   - EnemyDamage
   - PlayerDamage
+  - Enemy
+  - HealthPickUp
   layers:
   - Default
   - TransparentFX
@@ -23,8 +25,8 @@ TagManager:
   - PickUp
   - EnemyDamage
   - PlayerDamage
-  - 
-  - 
+  - Enemy
+  - HealthPickUp
   - 
   - 
   - 

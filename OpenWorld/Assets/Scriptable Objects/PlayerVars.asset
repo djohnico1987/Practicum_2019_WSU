@@ -22,8 +22,13 @@ MonoBehaviour:
   sprintSpeedMultiplier: 1.5
   improvedFallSpeed: 3
   improvedJumpSpeed: 2
-  maxHealth: 10
+  maxHealth: 3
   timeInvurnerable: 1
+  timeToRespawn: 1.5
+  startHealth: {r: 0.9658127, g: 1, b: 0.6273585, a: 0}
+  cautionHealth: {r: 1, g: 0.6883278, b: 0.042452812, a: 0}
+  dangerHealth: {r: 1, g: 0.058691293, b: 0, a: 0}
+  levelOfLightIntesity: 1.25
   maxDistanceOfLightBeam: 15
   tiltCameraSpeed: 1
   minTilt: -15

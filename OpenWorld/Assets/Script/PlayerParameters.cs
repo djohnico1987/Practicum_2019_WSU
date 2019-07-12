@@ -42,11 +42,25 @@ public class PlayerParameters : ScriptableObject
 
     [Header("Player Health")]
 
-    public float maxHealth = 0f;
+    public int maxHealth = 0;
 
     [Tooltip("Decrease or Increase time before player can take damage again")]
     [Range(0, 5f)]
     public float timeInvurnerable = 1f;
+
+    public float timeToRespawn = 1.5f;
+
+    [Tooltip("Color of player when at full health")]
+    public Color startHealth;
+
+    [Tooltip("Color of player when at half health")]
+    public Color cautionHealth;
+
+    [Tooltip("Color of player when at near death")]
+    public Color dangerHealth;
+
+    [Range(0f, 5f)]
+    public float levelOfLightIntesity = 2f;
 
     [Header("Weapon Modificatinos")] //variables to adjust player weapon
 
