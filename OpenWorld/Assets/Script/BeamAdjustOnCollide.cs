@@ -16,10 +16,10 @@ public class BeamAdjustOnCollide : MonoBehaviour
     void FixedUpdate()
     {
 
-        int layermask = 1 << 9;
-        layermask = ~layermask;
+        //int layermask = 1 << 9;
+        //layermask = ~layermask;
         RaycastHit hit;
-        Physics.Raycast(transform.position, transform.forward, out hit, playerVariables.maxDistanceOfLightBeam, layermask);
+        Physics.Raycast(transform.position, transform.forward, out hit, playerVariables.maxDistanceOfLightBeam, playerVariables.hitLayers);
 
         //error checks for null public variables
         if (playerVariables == null && !message)

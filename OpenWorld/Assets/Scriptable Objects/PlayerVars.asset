@@ -31,6 +31,9 @@ MonoBehaviour:
   dangerHealth: {r: 1, g: 0.058691293, b: 0, a: 0}
   levelOfLightIntesity: 1.25
   maxDistanceOfLightBeam: 20
+  hitLayers:
+    serializedVersion: 2
+    m_Bits: 30519
   tiltCameraSpeed: 1
   minTilt: -15
   maxTilt: 20

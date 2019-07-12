@@ -33,10 +33,10 @@ public class EnemyHealth : MonoBehaviour
             StartCoroutine(Damageable());
         }
     }
-    
-    private void OnCollisionStay(Collision collision)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (invurnerable == false && collision.gameObject.CompareTag("PlayerDamage"))
+        if (invurnerable == false && other.CompareTag("PlayerDamage"))
         {
             currentHealth--;
             invurnerable = true;
