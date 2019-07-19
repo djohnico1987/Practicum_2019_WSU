@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 82d6277bb6a06de4f868516c0c3b874c
+guid: fc776e3e32ede3c419d7431368edca85
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
@@ -35,10 +35,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: ClawAttack
+      name: ClawAttack2
       takeName: Take 001
       internalID: 1827226128182048838
-      firstFrame: 105
+      firstFrame: 107
       lastFrame: 149
       wrapMode: 0
       orientationOffsetY: 0
@@ -46,7 +46,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
