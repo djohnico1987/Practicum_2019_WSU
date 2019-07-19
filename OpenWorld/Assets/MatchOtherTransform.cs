@@ -6,7 +6,16 @@ public class MatchOtherTransform : MonoBehaviour
 {
     public Transform otherToMatch;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        //error checks
+        if (otherToMatch == null)
+        {
+            Debug.Log("Check game object - " + gameObject.name + " in script otherToMatch for public transform");
+            gameObject.GetComponent<MatchOtherTransform>().enabled = false;
+        }
+    }
+
     void Update()
     {
         transform.rotation = otherToMatch.rotation;

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8273178857476916271}
   - component: {fileID: 8273178857476916270}
   - component: {fileID: 8273178857476916268}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: DialogueBox
   m_TagString: Dialog
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}

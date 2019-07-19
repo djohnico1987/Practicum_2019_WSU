@@ -16,32 +16,31 @@ public class DialogueBoxPrompt : MonoBehaviour
     [TextArea]
     public string dialogueText;
 
-    //will display text input and then start timer for duration of text.
-    private void OnTriggerEnter(Collider other)
+    private void Start()
     {
         if (textBox == null || textDialogue == null)
         {
             Debug.Log("Check game object - " + gameObject.name + " in script DialogueBoxPrompt for public variables");
+            gameObject.GetComponent<DialogueBoxPrompt>().enabled = false;
         }
-        else
-        {
-            textBox.SetActive(true);
-            textDialogue.GetComponent<TextMeshProUGUI>().text = dialogueText;
-            StartCoroutine(DisplayDuration());
-        }
+    }
+
+    //will display text input and then start timer for duration of text.
+    private void OnTriggerEnter(Collider other)
+    {
+        textBox.SetActive(true);
+        textDialogue.GetComponent<TextMeshProUGUI>().text = dialogueText;
+        StartCoroutine(DisplayDuration());
     }
 
     //After specified time, the text will fade out
     IEnumerator DisplayDuration()
     {
         yield return new WaitForSeconds(displayDialogueTimer);
-
-        if (textBox != null && textDialogue != null)
-        {
-            textDialogue.GetComponent<Animator>().SetTrigger("Fade");
-            textBox.GetComponent<Animator>().SetTrigger("Fade");
-        }
-
+        
+        textDialogue.GetComponent<Animator>().SetTrigger("Fade");
+        textBox.GetComponent<Animator>().SetTrigger("Fade");
+        
         //disables dialogue box if the box is only used once
         if (playOnlyOnce == true)
         {

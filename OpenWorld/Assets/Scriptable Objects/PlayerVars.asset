@@ -17,9 +17,9 @@ MonoBehaviour:
   sideSpeed: 3
   backSpeed: 3
   rotateSpeed: 1.25
-  canPlayerJump: 0
+  canPlayerJump: 1
   jumpHeight: 5
-  canPlayerSprint: 0
+  canPlayerSprint: 1
   sprintSpeedMultiplier: 1.5
   improvedFallSpeed: 3
   improvedJumpSpeed: 2

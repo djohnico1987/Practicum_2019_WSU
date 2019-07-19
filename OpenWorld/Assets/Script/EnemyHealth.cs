@@ -13,6 +13,11 @@ public class EnemyHealth : MonoBehaviour
     //sets enemy's health at start
     private void Start()
     {
+        if(enemyVariables == null)
+        {
+            Debug.Log("Check game object - " + gameObject.name + " in script EnemyParameters for public variables");
+            gameObject.GetComponent<EnemyHealth>().enabled = false;
+        }
         currentHealth = enemyVariables.health;
     }
 
@@ -20,6 +25,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if(currentHealth == 0)
         {
+            gameObject.GetComponent<Rigidbody>().ResetInertiaTensor();
             gameObject.SetActive(false);
         }
     }
@@ -34,7 +40,7 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (invurnerable == false && other.CompareTag("PlayerDamage"))
         {
