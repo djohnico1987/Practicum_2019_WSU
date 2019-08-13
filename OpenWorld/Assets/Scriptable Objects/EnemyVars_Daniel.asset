@@ -16,4 +16,8 @@ MonoBehaviour:
   invurnerableTimer: 0.25
   detectPlayer: 30
   losesPlayer: 40
+  speed: 4
   attackRange: 20
+  bulletSpeed: 5
+  bulletLifetime: 5
+  bulletTurnSpeed: 2

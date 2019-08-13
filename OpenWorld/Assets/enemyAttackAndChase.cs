@@ -9,7 +9,7 @@ public class enemyAttackAndChase : MonoBehaviour
     private Transform target;
     private NavMeshAgent agent;
     private bool isChasing = false;
-    private Vector3 start;
+    private Vector3 startp, startr;
 
     void Start()
     {
@@ -25,7 +25,7 @@ public class enemyAttackAndChase : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
 
         //used for npc to return to starting position
-        start = transform.position;
+        startp = transform.position;
     }
 
     // Update is called once per frame
@@ -34,8 +34,16 @@ public class enemyAttackAndChase : MonoBehaviour
         float distance = Vector3.Distance(target.position, transform.position);
 
         //how ai chases player
+        //if player runs out of chasing range, disengages and returns to original start
+        if (distance >= enemyVariables.losesPlayer && isChasing == true)
+        {
+            isChasing = false;
+            agent.SetDestination(startp);
+            //resets stopping distance so that it goes to original starting spot
+            agent.stoppingDistance = 0f;
+        }
         //keeps chasing and attacking the player when in range
-        if (isChasing == true && distance <= enemyVariables.attackRange)
+        else if (isChasing == true)
         {
             agent.SetDestination(target.position);
             if(distance <= agent.stoppingDistance)
@@ -51,18 +59,6 @@ public class enemyAttackAndChase : MonoBehaviour
             //enemy stops to attack at range
             agent.stoppingDistance = enemyVariables.attackRange/2f;
             isChasing = true;
-        }
-        //if player runs out of chasing range, disengages and returns to original start
-        else if (distance >= enemyVariables.losesPlayer && isChasing == true)
-        {
-            isChasing = false;
-            agent.SetDestination(start);
-            //resets stopping distance so that it goes to original starting spot
-            agent.stoppingDistance = 0f;
-        }
-        else
-        {
-            agent.SetDestination(target.position);
         }
     }
 

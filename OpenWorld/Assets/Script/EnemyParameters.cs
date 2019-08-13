@@ -15,13 +15,25 @@ public class EnemyParameters : ScriptableObject
 
     [Header("Player Chase")]
 
-    [Range (0, 50f)]
+    [Range(0, 50f)]
     public float detectPlayer = 10f;
 
-    [Range (0, 50f)]
+    [Range(0, 50f)]
     public float losesPlayer = 15f;
+
+    [Range(0, 10f)]
+    public float speed = 4f;
 
     [Header("Attack Details")]
     [Range(0, 50f)]
     public float attackRange = 7f;
+
+    [Range(0, 10f)]
+    public float bulletSpeed = 5f;
+
+    [Range(0, 10f)]
+    public float bulletLifetime = 5f;
+
+    [Range(0f, 10f)]
+    public float bulletTurnSpeed = 2f;
 }
