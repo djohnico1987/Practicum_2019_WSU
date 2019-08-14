@@ -6,15 +6,16 @@ using UnityEngine.AI;
 public class enemyAttackAndChase : MonoBehaviour
 {
     public EnemyParameters enemyVariables;
+    public Transform firePoint;
     private Transform target;
     private NavMeshAgent agent;
-    private bool isChasing = false;
+    private bool isChasing = false, isFiring = false;
     private Vector3 startp, startr;
 
     void Start()
     {
         //error check for public variable
-        if(enemyVariables == null)
+        if (enemyVariables == null || firePoint == null)
         {
             Debug.Log("Check game object - " + gameObject.name + " in script enemyAttackAndChase for public variables");
             gameObject.GetComponent<enemyAttackAndChase>().enabled = false;
@@ -46,6 +47,11 @@ public class enemyAttackAndChase : MonoBehaviour
         else if (isChasing == true)
         {
             agent.SetDestination(target.position);
+            if(isFiring == false && distance <= enemyVariables.attackRange)
+            {
+                isFiring = true;
+                StartCoroutine(Shoot());
+            }
             if(distance <= agent.stoppingDistance)
             {
                 //keeps the enemy facing player
@@ -62,6 +68,13 @@ public class enemyAttackAndChase : MonoBehaviour
         }
     }
 
+    IEnumerator Shoot()
+    {
+        objectPooler.instance.SpawnFromPool("EnemyBullet", firePoint.position, firePoint.rotation);
+        yield return new WaitForSeconds(enemyVariables.timeBetweenShots);
+        isFiring = false;
+    }
+
     void FaceTarget()
     {
         //makes enemy face player
@@ -75,9 +88,5 @@ public class enemyAttackAndChase : MonoBehaviour
         //draws range for level design
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, enemyVariables.detectPlayer);
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, enemyVariables.losesPlayer);
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, enemyVariables.attackRange);
     }
 }

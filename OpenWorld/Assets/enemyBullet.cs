@@ -21,7 +21,6 @@ public class enemyBullet : MonoBehaviour
             gameObject.GetComponent<enemyBullet>().enabled = false;
         }
         target = playerManager.instance.player.transform;
-        StartCoroutine(Lifetime()); //test remove afterwards
     }
 
     private void OnEnable()
@@ -52,5 +51,13 @@ public class enemyBullet : MonoBehaviour
     {
         yield return new WaitForSeconds(enemyVariables.bulletLifetime);
         gameObject.SetActive(false);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!other.CompareTag("Enemy") && !other.CompareTag("EnemyDamage"))
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

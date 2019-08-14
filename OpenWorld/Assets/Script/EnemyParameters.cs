@@ -28,6 +28,9 @@ public class EnemyParameters : ScriptableObject
     [Range(0, 50f)]
     public float attackRange = 7f;
 
+    [Range(0, 5f)]
+    public float timeBetweenShots = 2f;
+
     [Range(0, 10f)]
     public float bulletSpeed = 5f;
 
