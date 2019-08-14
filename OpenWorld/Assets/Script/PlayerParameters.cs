@@ -69,7 +69,7 @@ public class PlayerParameters : ScriptableObject
 
     [Header("Weapon Modificatinos")] //variables to adjust player weapon
 
-    [Range(0, 20f)]
+    [Range(0, 40f)]
     [Tooltip("Default distance for the max length of light beam")]
     public float maxDistanceOfLightBeam = 15f;
 

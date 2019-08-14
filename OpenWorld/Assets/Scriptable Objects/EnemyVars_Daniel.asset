@@ -19,6 +19,6 @@ MonoBehaviour:
   speed: 4
   attackRange: 20
   timeBetweenShots: 2
-  bulletSpeed: 7
+  bulletSpeed: 6
   bulletLifetime: 5
   bulletTurnSpeed: 2

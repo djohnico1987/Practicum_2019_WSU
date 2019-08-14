@@ -2131,7 +2131,7 @@ GameObject:
   - component: {fileID: 2915347785526084326}
   - component: {fileID: 5115920525391409052}
   - component: {fileID: 8160151831454105689}
-  - component: {fileID: 6611564469315870749}
+  - component: {fileID: 6816454577582287532}
   m_Layer: 13
   m_Name: Boss
   m_TagString: Enemy
@@ -2192,7 +2192,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 1
---- !u!64 &6611564469315870749
+--- !u!64 &6816454577582287532
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2203,7 +2203,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 2512909841776217668, guid: b8e5c2846bcee974f8f6f2b6664de7d5, type: 3}
 --- !u!1 &2199621717099978591
