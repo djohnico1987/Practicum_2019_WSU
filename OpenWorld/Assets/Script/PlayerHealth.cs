@@ -22,6 +22,12 @@ public class PlayerHealth : MonoBehaviour
     //sets player's health at start
     private void Start()
     {
+        if (playerVariables == null)
+        {
+            Debug.Log("Check game object - " + gameObject.name + " in script PlayerHealth for public variables");
+            gameObject.GetComponent<PlayerHealth>().enabled = false;
+        }
+
         currentHealth = playerVariables.maxHealth;
         mat = GetComponent<Renderer>().material;
     }
@@ -29,11 +35,6 @@ public class PlayerHealth : MonoBehaviour
     //sets player color based on life
     private void Update()
     {
-        if(playerVariables == null)
-        {
-            Debug.Log("Check game object - " + gameObject.name + " in script PlayerHealth for public variables");
-            gameObject.GetComponent<PlayerHealth>().enabled = false;
-        }
 
         if (currentHealth == playerVariables.maxHealth)
         {
@@ -50,6 +51,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth == 0)
         {
+            gameObject.GetComponent<Rigidbody>().ResetInertiaTensor();
             gameObject.SetActive(false);
         }
     }

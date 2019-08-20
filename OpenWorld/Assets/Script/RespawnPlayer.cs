@@ -13,6 +13,11 @@ public class RespawnPlayer : MonoBehaviour
 
     private void Start()
     {
+        if (playerVariables == null)
+        {
+            Debug.Log("Check game object - " + gameObject.name + " in script RespawnPlayer for public variables");
+            gameObject.GetComponent<RespawnPlayer>().enabled = false;
+        }
 
         player = GameObject.FindGameObjectWithTag("Player");
         respawnPoint = GameObject.FindGameObjectWithTag("Respawn");
@@ -20,11 +25,6 @@ public class RespawnPlayer : MonoBehaviour
     
     void Update()
     {
-        if (playerVariables == null)
-        {
-            Debug.Log("Check game object - " + gameObject.name + " in script RespawnPlayer for public variables");
-            gameObject.GetComponent<RespawnPlayer>().enabled = false;
-        }
         if (!player.activeInHierarchy && !isPlayerRespawning) //when player 'dies' or player game object is disabled, it's placed the game object 'respawn'
         {
             isPlayerRespawning = true;

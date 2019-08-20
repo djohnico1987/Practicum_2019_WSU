@@ -11,12 +11,19 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 vMove = Vector3.zero;
     private Vector3 movement = Vector3.zero;
 
-    private bool message = false; //for debug.log
-
     private bool isJumping = false; //It was decided that the player will not able to jump
     private bool isSprinting = false; //It was decided that the player will not able to sprint
     private bool isGrounded = true;
 
+    private void Start()
+    {
+        //prevents error from spamming log, will help locate opportunity
+        if (playerVariables == null || rb == null)
+        {
+            Debug.Log("Check game object - " + gameObject.name + " in script Player Movement for public variables");
+            gameObject.GetComponent<PlayerMovement>().enabled = false;
+        }
+    }
     void Update()
     {
         float hAxis = Input.GetAxisRaw("Horizontal"); //input of WASD
@@ -24,19 +31,9 @@ public class PlayerMovement : MonoBehaviour
 
         hMove = hAxis * transform.right; //used to determine movement of object locally
         vMove = vAxis * transform.forward;
-
-        if (playerVariables != null || rb != null)
-        {
-            hMove = hMove.normalized * playerVariables.sideSpeed; //applies the amount of speed to move side to side
-        }
-
-        //prevents error from spamming log, will help locate opportunity
-        if((playerVariables == null || rb == null) && !message)
-        {
-            message = true;
-            Debug.Log("Check game object - " + gameObject.name + " in script Player Movement for public variables");
-        }
-        else if (vAxis >= 0f) // applies speed based on foward or backwards movement
+        hMove = hMove.normalized * playerVariables.sideSpeed; //applies the amount of speed to move side to side
+        
+        if (vAxis >= 0f) // applies speed based on foward or backwards movement
         {
             vMove = vMove.normalized * playerVariables.walkSpeed;
         }

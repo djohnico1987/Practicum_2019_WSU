@@ -9,23 +9,20 @@ public class PlayerRotation : MonoBehaviour
     public PlayerParameters playerVariables;
     public Rigidbody rb;
 
-    private bool message = false;
+    private void Start()
+    {
+        //error checks for null public variables
+        if (rb == null || playerVariables == null)
+        {
+            Debug.Log("Check game object - " + gameObject.name + " in script PlayerRotation for public variables");
+            gameObject.GetComponent<PlayerRotation>().enabled = false;
+        }
+    }
 
     void Update()
     {
         float hAxis = Input.GetAxisRaw("Mouse X");
-
-        //error checks for null public variables
-        if ((rb == null || playerVariables == null) && !message)
-        {
-            message = true;
-            Debug.Log("Check game object - " + gameObject.name + " in script PlayerRotation for public variables");
-        }
-        //gives rotation amount based on mouse horizontal movement
-        else
-        {
-            rotateSelf = new Vector3(0f, hAxis, 0f) * playerVariables.rotateSpeed;
-        }
+        rotateSelf = new Vector3(0f, hAxis, 0f) * playerVariables.rotateSpeed;
     }
 
     private void FixedUpdate()

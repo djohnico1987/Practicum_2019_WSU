@@ -5,7 +5,16 @@ using UnityEngine;
 public class RadiusForShader : MonoBehaviour
 {
     public PlayerParameters playerVariables;
-    
+
+    private void Start()
+    {
+        if(playerVariables == null)
+        {
+            Debug.Log("Check game object - " + gameObject.name + " in script RadiusForShader for public variables");
+            gameObject.GetComponent<RadiusForShader>().enabled = false;
+        }
+    }
+
     void Update()
     {
         //gets information from shader
