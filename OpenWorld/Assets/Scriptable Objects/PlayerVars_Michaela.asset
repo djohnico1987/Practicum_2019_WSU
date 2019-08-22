@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: PlayerVars_Michaela
   m_EditorClassIdentifier: 
   radius: 20
-  walkSpeed: 6
-  sideSpeed: 3
-  backSpeed: 3
-  rotateSpeed: 1.25
+  walkSpeed: 10
+  sideSpeed: 10
+  backSpeed: 10
+  rotateSpeed: 5
   canPlayerJump: 1
   jumpHeight: 5
   canPlayerSprint: 1
