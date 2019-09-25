@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 457fc25b1d1478e4fbf11b94bda496e1
+guid: a259871b22acc0f4c82ebbbc12c6575f
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
@@ -35,18 +35,18 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: Walk
       takeName: Take 001
       internalID: 1827226128182048838
       firstFrame: 1
-      lastFrame: 120
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -98,8 +98,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips:
-  - 06195efccf9f87045aadaa710d566938
+  referencedClips: []
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
