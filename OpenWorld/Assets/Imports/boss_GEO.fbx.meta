@@ -31,7 +31,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -67,7 +67,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips:
-  - 457fc25b1d1478e4fbf11b94bda496e1
+  - d2122aad7dfcc0747b1b614cef3366e9
   - 06195efccf9f87045aadaa710d566938
   - 68cea66b0c7718a4793f5ab7fe6509fd
   importAnimation: 1

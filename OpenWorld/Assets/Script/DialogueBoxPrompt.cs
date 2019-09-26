@@ -8,6 +8,7 @@ public class DialogueBoxPrompt : MonoBehaviour
     public GameObject textBox; 
     public GameObject textDialogue;
 
+
     [Header("Dialogue")]
     public bool playOnlyOnce = false;
     public float displayDialogueTimer = 3f;
@@ -46,5 +47,13 @@ public class DialogueBoxPrompt : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        SphereCollider trigger = gameObject.GetComponent<SphereCollider>(); ;
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, trigger.radius);
+        Gizmos.DrawSphere(transform.position, 1f);
     }
 }

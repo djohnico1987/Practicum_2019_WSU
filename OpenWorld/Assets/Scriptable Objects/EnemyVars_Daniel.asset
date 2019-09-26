@@ -17,6 +17,9 @@ MonoBehaviour:
   detectPlayer: 30
   losesPlayer: 40
   speed: 4
+  seesThrough:
+    serializedVersion: 2
+    m_Bits: 32038
   attackRange: 20
   timeBetweenShots: 2
   bulletSpeed: 6

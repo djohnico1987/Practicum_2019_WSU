@@ -24,6 +24,9 @@ public class EnemyParameters : ScriptableObject
     [Range(0, 10f)]
     public float speed = 4f;
 
+    [Tooltip("What the enemy can see through, uncheck if it can't see through a layer.")]
+    public LayerMask seesThrough;
+
     [Header("Attack Details")]
     [Range(0, 50f)]
     public float attackRange = 7f;

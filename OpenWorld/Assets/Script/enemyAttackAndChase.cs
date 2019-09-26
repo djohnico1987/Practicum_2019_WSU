@@ -9,7 +9,7 @@ public class enemyAttackAndChase : MonoBehaviour
     public Transform firePoint;
     private Transform target;
     private NavMeshAgent agent;
-    private bool isChasing = false, isFiring = false;
+    private bool isChasing = false, isFiring = false, isInSight = false, checkSight = false;
     private Vector3 startp, startr;
 
     void Start()
@@ -61,10 +61,19 @@ public class enemyAttackAndChase : MonoBehaviour
         //chases player to move within attack range
         else if (distance <= enemyVariables.detectPlayer && isChasing == false)
         {
-            agent.SetDestination(target.position);
-            //enemy stops to attack at range
-            agent.stoppingDistance = enemyVariables.attackRange/2f;
-            isChasing = true;
+            if (!checkSight)
+            {
+                isInSight = LineOfSightCheck();
+                checkSight = true;
+            }
+
+            if (isInSight)
+            {
+                agent.SetDestination(target.position);
+                //enemy stops to attack at range
+                agent.stoppingDistance = enemyVariables.attackRange / 2f;
+                isChasing = true;
+            }
         }
     }
 
@@ -73,6 +82,20 @@ public class enemyAttackAndChase : MonoBehaviour
         objectPooler.instance.SpawnFromPool("EnemyBullet", firePoint.position, firePoint.rotation);
         yield return new WaitForSeconds(enemyVariables.timeBetweenShots);
         isFiring = false;
+    }
+    
+    bool LineOfSightCheck()
+    {
+        RaycastHit hit;
+        Physics.Raycast(firePoint.position, (target.position - firePoint.position), out hit, enemyVariables.detectPlayer, enemyVariables.seesThrough);
+        Debug.DrawRay(firePoint.position, (target.position - firePoint.position), Color.red);
+        if(hit.collider.gameObject.tag == "Player")
+        {
+            checkSight = false;
+            return true;
+        }
+        checkSight = false;
+        return false;
     }
 
     void FaceTarget()
