@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 06195efccf9f87045aadaa710d566938
+guid: d2122aad7dfcc0747b1b614cef3366e9
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable:
@@ -35,11 +35,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: ClawAttack v2 with fixed eyes
+      name: Take 001
       takeName: Take 001
       internalID: 1827226128182048838
-      firstFrame: 107
-      lastFrame: 149
+      firstFrame: 1
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -98,7 +98,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips: []
+  referencedClips:
+  - 457fc25b1d1478e4fbf11b94bda496e1
+  - 06195efccf9f87045aadaa710d566938
+  - 68cea66b0c7718a4793f5ab7fe6509fd
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
