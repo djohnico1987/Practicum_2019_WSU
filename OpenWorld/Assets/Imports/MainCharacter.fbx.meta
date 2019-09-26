@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b8e5c2846bcee974f8f6f2b6664de7d5
+guid: 67c735e6f3178dc49bb0f9a185e51c98
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable: []
@@ -31,7 +31,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -67,12 +67,8 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips:
-<<<<<<< HEAD:OpenWorld/Assets/Imports/boss_GEO.fbx.meta
-  - d2122aad7dfcc0747b1b614cef3366e9
-=======
->>>>>>> 00484ef8a1aa843fba9dc7021172e017345fd3f0:OpenWorld/Assets/Imports/boss.fbx.meta
-  - 06195efccf9f87045aadaa710d566938
-  - 68cea66b0c7718a4793f5ab7fe6509fd
+  - 1bea704093ebbde40b71d876c3df6060
+  - a259871b22acc0f4c82ebbbc12c6575f
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
